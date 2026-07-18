@@ -1,0 +1,22 @@
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        char_map = {}  # Dictionary to store the last seen index of characters
+        max_length = 0
+        start = 0  # Left boundary of the sliding window
+
+        for end in range(len(s)):
+            # If the character is already in the map and within the current window
+            if s[end] in char_map and char_map[s[end]] >= start:
+                start = char_map[s[end]] + 1
+            
+            # Update the last seen index of the character
+            char_map[s[end]] = end
+            
+            # Calculate the current window length and update max_length
+            max_length = max(max_length, end - start + 1)
+            
+        return max_length
