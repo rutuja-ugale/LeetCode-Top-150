@@ -7,7 +7,6 @@ class Solution(object):
         cols = set()
         pos_diag = set()  # (r + c)
         neg_diag = set()  # (r - c)
-        
         def backtrack(row):
             if row == n:
                 return 1
