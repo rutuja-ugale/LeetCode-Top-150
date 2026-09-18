@@ -29,7 +29,5 @@ class Solution(object):
                 cols.remove(col)
                 pos_diag.remove(row + col)
                 neg_diag.remove(row - col)
-                
             return count
-
         return backtrack(0)
